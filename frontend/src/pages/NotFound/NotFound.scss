@@ -1,0 +1,62 @@
+@import '../../assets/styles/utils/utils';
+
+.not-found {
+  $circle-color: rgba(174, 186, 195, 0.5);
+
+  &__wrapper {
+    position: relative;
+    @include adaptiv-value('height', 600, 500);
+  }
+
+  &__404 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    @include adaptiv-value('gap', 32, 24);
+  }
+
+  &__number {
+    font-family: $font-barlow;
+    line-height: 100%;
+    @include adaptiv-font(300, 250);
+    text-align: center;
+    height: fit-content;
+    color: $black;
+    text-shadow:
+      -1px 0 $circle-color,
+      0 1px $circle-color,
+      1px 0 $circle-color,
+      0 -1px $circle-color;
+
+    &--first {
+      margin-top: auto;
+    }
+  }
+
+  &__circle {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid $circle-color;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include adaptiv-value('gap', 24, 16);
+
+    & .btn {
+      width: auto;
+    }
+  }
+
+  &__desc {
+    max-width: 300px;
+    text-align: center;
+  }
+}

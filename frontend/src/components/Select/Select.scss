@@ -1,0 +1,98 @@
+@import '../../assets/styles/utils/utils';
+
+.select {
+  position: relative;
+  z-index: 50;
+
+  &-trigger {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    @include adaptiv-value('padding-top', 8, 6);
+    @include adaptiv-value('padding-bottom', 8, 6);
+    @include adaptiv-value('padding-left', 16, 12);
+    @include adaptiv-value('padding-right', 16, 12);
+    border-radius: 6px;
+    @include adaptiv-font(16, 12);
+    letter-spacing: 0.04em;
+    font-weight: 300;
+    background: $dark-grey;
+    @include transition();
+  }
+
+  &-placeholder {
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  &-arrow {
+    @include adaptiv-value('margin-left', 10, 8);
+    @include transition();
+
+    &.MuiSvgIcon-root {
+      @include transition();
+    }
+  }
+
+  &.active &-arrow {
+    transform: rotate(-180deg);
+  }
+
+  &-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    max-width: 350px;
+    min-width: 280px;
+    width: 100%;
+
+    &__wrapper {
+      @include adaptiv-value('padding-top', 12, 6);
+      @include adaptiv-value('padding-bottom', 12, 6);
+      @include adaptiv-value('padding-left', 10, 8);
+      @include adaptiv-value('padding-right', 10, 8);
+      background: rgba(64, 64, 64, 0.8);
+      box-shadow: -2px 2px 10px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      max-height: 350px;
+    }
+  }
+
+  &-option {
+    cursor: pointer;
+    @include adaptiv-font(14, 12);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    @include adaptiv-value('padding-top', 8, 6);
+    @include adaptiv-value('padding-bottom', 8, 6);
+    @include adaptiv-value('padding-left', 16, 12);
+    @include adaptiv-value('padding-right', 16, 12);
+    border-radius: 6px;
+    @include transition();
+
+    &:not(:last-child) {
+      @include adaptiv-value('margin-bottom', 3, 5);
+    }
+
+    &__clear {
+      color: $grey;
+      display: none;
+
+      &--visible {
+        display: block;
+      }
+    }
+
+    &:hover,
+    &.current {
+      background: $white;
+      color: $black;
+    }
+
+    &.current {
+      cursor: auto;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../../assets/styles/utils/utils';
+
+.state {
+  &-structure {
+    &__cards {
+      & .cards {
+        grid-template-columns: repeat(3, 1fr);
+
+        @media (max-width: 1024px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 680px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      & .card {
+        @include adaptiv-value('height', 200, 100);
+
+        &-title {
+          @include adaptiv-font(20, 16);
+        }
+      }
+    }
+  }
+
+  &-free-zones {
+    &__filters {
+      display: flex;
+      justify-content: flex-end;
+      @include adaptiv-value('margin-bottom', 50, 20);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../../../assets/styles/utils/utils';
+
+.btn-clear {
+  display: flex;
+  align-items: center;
+  color: $grey;
+
+  &:hover {
+    color: $white;
+  }
+
+  &:hover &__img {
+    transform: rotate(90deg);
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    @include transition();
+
+    & .MuiSvgIcon-root {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    @include adaptiv-font(14, 10);
+    letter-spacing: 0.04em;
+    @include adaptiv-value('margin-left', 6, 4);
+    @include transition();
+  }
+}

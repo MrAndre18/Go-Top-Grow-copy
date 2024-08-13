@@ -1,0 +1,43 @@
+{
+  "title": "Info",
+  "state": {
+    "structure": {
+      "title": "The state and political structure of the UAE",
+      "text": {
+        "1": "The United Arab Emirates, like any other Muslim country, is distinguished by unique systems of government and political structure, which are dictated by the norms of local law and customs formed over the centuries of the existence of the peoples of the Middle East.",
+        "2": "All emirates are absolute monarchies, only in Abu Dhabi there are advisory bodies - the Cabinet and the National Advisory Council, which brings this emirate closer to a constitutional monarchy. Each emirate has its own government and administrative bodies.",
+        "3": "The State structure of the United Arab Emirates is a unique combination of the republican and monarchical system. The UAE is a federal state consisting of seven emirates - absolute monarchies. The state is headed by the Emir of Abu Dhabi, the government is headed by the Emir of Dubai.",
+        "4": "The current state system in the UAE resembles a federation, the elements of which are the Emirates. At the head of each of them is the emir (an analogue of the king), moreover, this title is inherited. So each emir is a representative of an ancient family of eastern rulers.",
+        "5": "The monarchical power is strong in the Emirates, and this is reflected in the formation of the main governing body of the country."
+      }
+    },
+    "contacts": {
+      "title": "Contacts of UAE government agencies"
+    },
+    "emirates": {
+      "title":"Emirates",
+      "more_btn": "More"
+    },
+    "free_zones": {
+      "title": "Free economic zones in the UAE",
+      "selects": {
+        "emirates": "Emirates"
+      }
+    }
+  },
+  "business": {
+    "companies": {
+      "title": "Types of companies",
+      "forms": "In accordance with the UAE Federal Law \"On Commercial Companies\", the following organizational and legal forms of commercial companies are distinguished:"
+    },
+    "open": {
+      "title": "Starting a business"
+    },
+    "licenses": {
+      "title": "Types of licenses"
+    }
+  },
+  "detail": {
+    "back": "Back"
+  }
+}

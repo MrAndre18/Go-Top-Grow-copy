@@ -1,0 +1,10 @@
+@import '../../assets/styles/utils/utils';
+
+.mask {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply, normal;
+}

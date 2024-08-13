@@ -1,0 +1,41 @@
+@import '../../assets/styles/utils/utils';
+
+.form {
+  &-search {
+    @include adaptiv-value('padding-right', 40, 10);
+    @include adaptiv-value('padding-left', 40, 10);
+    @include adaptiv-value('padding-top', 30, 15);
+    @include adaptiv-value('padding-bottom', 30, 15);
+    width: 100%;
+    background: $dark-grey;
+    @include adaptiv-value('border-radius', 20, 12);
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &__input {
+      width: 100%;
+      @media (max-width: 768px) {
+        @include adaptiv-value('height', 45, 35);
+      }
+    }
+  
+    &__submit {
+      @include adaptiv-value('min-width', 220, 120);
+      @include adaptiv-value('height', 45, 35);
+      @include adaptiv-value('margin-left', 40, 0);
+  
+      @media (max-width: 768px) {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        min-width: auto;
+      }
+    }
+  }
+}

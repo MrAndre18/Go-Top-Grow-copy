@@ -1,0 +1,81 @@
+@import '../../assets/styles/utils/utils';
+
+.contact-form {
+  width: 100%;
+  @include adaptiv-value('padding-left', 40, 16);
+  @include adaptiv-value('padding-right', 40, 16);
+  @include adaptiv-value('padding-top', 52, 32);
+  @include adaptiv-value('padding-bottom', 52, 32);
+  @include adaptiv-value('border-radius', 40, 24);
+  background: $dark-green;
+
+  &__title {
+    @include adaptiv-value('margin-bottom', 32, 20);
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 20, 16);
+  }
+
+  &__field {
+    @include adaptiv-value('height', 60, 52);
+  }
+
+  &__submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .btn {
+      background: $gold;
+      color: $black;
+      @include adaptiv-value('height', 60, 52);
+
+      &:hover {
+        background: $white;
+        color: $dark-green;
+      }
+    }
+
+    &-subtitle {
+      text-align: center;
+      @include adaptiv-value('margin-top', 8, 4);
+
+      & .navigation-link {
+        display: inline;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        color: $yellow;
+        @include adaptiv-value('margin-left', 4, 2);
+
+        &::before {
+          border-color: $yellow;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include adaptiv-value('margin-top', 32, 20);
+    @include adaptiv-value('gap', 16, 12);
+
+    &-text {
+      max-width: 400px;
+      text-align: center;
+    }
+
+    &-links {
+      display: flex;
+      align-items: center;
+      @include adaptiv-value('gap', 32, 20);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../assets/styles/utils/utils';
+
+.laws {
+  @include adaptiv-value('padding-top', 60, 40);
+  min-height: 100vh;
+
+  &-body {
+    &__item {
+      opacity: 0;
+      @include transition($duration: 0.5s);
+
+      &.swiper-slide-visible {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,224 @@
+@import '../../assets/styles/utils/utils';
+
+.text-search {
+  @include adaptiv-value('width', 60, 40);
+  @include adaptiv-value('height', 60, 40);
+  @include transition();
+
+  &.active {
+    @include adaptiv-value('width', 350, 260);
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    background: $white;
+    border-radius: 50px;
+    padding: 0;
+    box-sizing: border-box;
+    color: $dark-grey;
+    @include transition();
+
+    &::placeholder {
+      opacity: 0;
+      @include transition();
+    }
+  }
+
+  &.active &__input {
+    @include adaptiv-value('padding-left', 20, 20);
+    @include adaptiv-value('padding-right', 90, 40);
+
+    &::placeholder {
+      opacity: 100%;
+    }
+  }
+
+  &__result {
+    position: absolute;
+    bottom: 5px;
+    @include adaptiv-value('bottom', 5, 3);
+    right: 0;
+    display: flex;
+    white-space: nowrap;
+    opacity: 0;
+    @include transition();
+
+    & span {
+      color: $dark-grey;
+      @include adaptiv-font(13, 11);
+    }
+
+    &-slash {
+      margin: 0 2px;
+    }
+
+    &.active {
+      @include adaptiv-value('right', 85, 65);
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    @include adaptiv-value('right', 5, 3);
+    z-index: 1;
+    transform: translateY(-50%);
+    @include adaptiv-value('width', 50, 35);
+    @include adaptiv-value('height', 50, 35);
+    background: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition();
+
+    &-img {
+      scale: 120%;
+
+      @media (max-width: 1280px) {
+        scale: 100%;
+      }
+
+      & path {
+        stroke: $dark-grey;
+        @include transition();
+      }
+    }
+
+    &:hover {
+      background: $dark-grey;
+    }
+
+    &:hover &-img {
+      & path {
+        stroke: $white;
+      }
+    }
+  }
+
+  &.active &__btn {
+    background: $dark-grey;
+
+    &-img {
+      & path {
+        stroke: $white;
+      }
+    }
+
+    &:hover {
+      background: $gold;
+    }
+
+    &:hover .text-search__btn-img {
+      & path {
+        stroke: $dark-grey;
+      }
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    height: 50px;
+    @include transition();
+
+    &.active {
+      @include adaptiv-value('right', 55, 35);
+    }
+
+    &-btn {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-img {
+        scale: 140%;
+        @include transition();
+
+        & path {
+          fill: $grey;
+          @include transition();
+        }
+      }
+
+      &:hover &-img {
+        scale: 180%;
+
+        & path {
+          fill: $black;
+        }
+      }
+    }
+
+    &-prev {
+      & svg {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &-next {
+      & svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    @include adaptiv-value('right', 20, 10);
+    top: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transition();
+
+    & span {
+      position: relative;
+      width: 25px;
+      height: 3px;
+      border-radius: 4px;
+      background: $white;
+      transform: rotate(45deg);
+      @include transition();
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 4px;
+        background: $white;
+        transform: rotate(90deg);
+        @include transition();
+      }
+    }
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &:hover span{
+      background: $gold;
+
+      &::before {
+        background: $gold;
+      }
+    }
+  }
+
+  &.active &__close {
+    top: 100%;
+    @include transition($delay: 200ms);
+  }
+}

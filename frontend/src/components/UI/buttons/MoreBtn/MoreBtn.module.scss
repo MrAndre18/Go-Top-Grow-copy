@@ -1,0 +1,38 @@
+@import '../../../../assets/styles/utils/utils';
+
+.more-btn {
+  position: relative;
+  z-index: 0;
+  @include adaptiv-value('padding-top', 8, 6);
+  @include adaptiv-value('padding-right', 16, 12);
+  @include adaptiv-value('padding-bottom', 8, 6);
+  @include adaptiv-value('padding-left', 16, 12);
+  border: 1px solid $white;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  text-align: center;
+  @include transition();
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -1px;
+    z-index: -1;
+    height: 105%;
+    width: 0;
+    background: $white;
+    @include transition();
+  }
+
+  &:hover {
+    color: $dark-grey;
+
+    &::before {
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}

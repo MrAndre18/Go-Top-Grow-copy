@@ -1,0 +1,141 @@
+@import '../../assets/styles/utils/utils';
+
+.categories-menu {
+  &--mobile {
+    background: $dark-grey;
+    color: $white;
+    @include adaptiv-value('padding-left', 20, 16);
+    @include adaptiv-value('padding-right', 20, 16);
+    @include adaptiv-value('padding-top', 30, 20);
+    @include adaptiv-value('padding-bottom', 40, 30);
+  }
+
+  &--mobile &__title {
+    @include adaptiv-font(20, 16);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    @include adaptiv-value('margin-bottom', 30, 20);
+  }
+
+  &__header {
+    @include adaptiv-value('margin-bottom', 30, 20);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include adaptiv-font(16, 14);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+
+  &__btn {
+    @include adaptiv-font(16, 14);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    @include adaptiv-value('padding-left', 20, 16);
+    @include adaptiv-value('padding-right', 20, 16);
+    @include adaptiv-value('padding-top', 10, 8);
+    @include adaptiv-value('padding-bottom', 10, 8);
+    background: $dark-grey;
+    border-radius: 6px;
+    @include transition();
+
+    &:hover {
+      background: $grey;
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include transition();
+
+    &:not(:last-child) {
+      @include adaptiv-value('margin-bottom', 12, 8);
+    }
+
+    &-trigger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include adaptiv-value('padding-left', 20, 16);
+
+      &.active .categories-menu__item-btn svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      left: 0;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include transition();
+
+      & svg {
+        width: 10px;
+        height: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition();
+
+        & path {
+          @include transition();
+        }
+      }
+
+      &:hover {
+        background: $white;
+
+        & svg path {
+          fill: $black;
+        }
+      }
+    }
+
+    &-title {
+      @include adaptiv-font(14, 14);
+      letter-spacing: 0.04em;
+      color: $light-grey-1;
+      @include transition();
+
+      &:hover,
+      &.active {
+        color: $white;
+      }
+    }
+
+    &-count {
+      color: $grey;
+      @include adaptiv-font(12, 10);
+      font-weight: 400;
+      @include adaptiv-value('margin-left', 8, 6);
+    }
+
+    &-children {
+      position: relative;
+      @include adaptiv-value('margin-top', 8, 6);
+
+      @include adaptiv-value('padding-left', 20, 16);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 100%;
+        background: $light-grey-1;
+      }
+    }
+  }
+}

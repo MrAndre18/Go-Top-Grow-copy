@@ -1,0 +1,13 @@
+{
+  "form": {
+    "placeholder": "Document Search",
+    "btn_submit": "Search",
+    "btn_tags": "Select keywords",
+    "result_count": "Records found:"
+  },
+  "tags": {
+    "title": "Keywords",
+    "count": "Selected:",
+    "btn_submit": "Show the result"
+  }
+}

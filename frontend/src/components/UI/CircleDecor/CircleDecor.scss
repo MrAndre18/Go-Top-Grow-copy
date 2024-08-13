@@ -1,0 +1,24 @@
+@import '../../../../src/assets/styles/utils/utils';
+
+.decorator-circle {
+  position: absolute;
+  z-index: 0;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  &--grey {
+    background: $grey;
+  }
+
+  &--green {
+    background: $green;
+  }
+
+  &--dark-green {
+    background: $dark-green;
+  }
+
+  &--black {
+    background: $black;
+  }
+}

@@ -1,0 +1,59 @@
+@import '../../assets/styles/utils/utils';
+
+.privacy {
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 40, 32);
+
+    &-updated {
+      text-align: right;
+      color: $light-grey-1;
+    }
+
+    &-link {
+      display: inline;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      @include transition();
+
+      &:hover {
+        color: $gold;
+      }
+    }
+
+    &-ul {
+      display: flex;
+      flex-direction: column;
+      @include adaptiv-value('gap', 6, 4);
+      list-style: initial;
+      @include adaptiv-value('padding-left', 24, 20);
+    }
+
+    &-li {
+      display: list-item;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 24, 16);
+
+    &-title {
+      text-align: center;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 12, 8);
+  }
+}

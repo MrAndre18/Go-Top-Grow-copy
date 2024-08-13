@@ -1,0 +1,17 @@
+@import '../../../../assets/styles/utils/utils';
+
+.hide-btn {
+  display: flex;
+  align-items: center;
+  @include adaptiv-font(18, 16);
+  @include adaptiv-value('padding-top', 8, 6);
+  @include adaptiv-value('padding-right', 16, 12);
+  @include adaptiv-value('padding-bottom', 8, 6);
+  @include adaptiv-value('padding-left', 16, 12);
+  border-radius: 5px;
+  @include transition();
+
+  &:hover {
+    background: $dark-grey;
+  }
+}

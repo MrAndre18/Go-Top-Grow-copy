@@ -1,0 +1,70 @@
+@import '../../assets/styles/utils/utils';
+
+.text-input {
+  position: relative;
+  width: 100%;
+  border: 1px solid $white;
+  @include adaptiv-value('border-radius', 10, 8);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  @include adaptiv-value('padding-left', 40, 10);
+  @include adaptiv-value('padding-right', 40, 10);
+  @include transition();
+
+  &__field {
+    color: $white;
+    @include adaptiv-font(16, 12);
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    @include transition();
+
+    &::placeholder {
+      color: $light-grey-1;
+    }
+  }
+
+  &:hover &__img-search path {
+    fill: $white;
+  }
+
+  &__img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-search {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & path {
+        fill: $light-grey-1;
+        @include transition();
+      }
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    & path {
+      fill: $light-grey-1;
+      @include transition();
+    }
+
+    &:hover path {
+      fill: $white;
+    }
+  }
+}

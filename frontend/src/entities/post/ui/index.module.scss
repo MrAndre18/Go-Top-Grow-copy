@@ -1,0 +1,151 @@
+@import '/src/assets/styles/utils/utils';
+
+.post {
+  min-height: 480px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: $dark-grey;
+
+    &-wrapper {
+      position: relative;
+      height: 240px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    &-img {
+      object-fit: cover;
+      object-position: center;
+      @include transition();
+    }
+
+    &-no-image {
+      position: absolute;
+      width: 30%;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      @include transition();
+
+      & path {
+        fill: $grey;
+      }
+    }
+
+    &:hover &-img,
+    &:hover &-no-image {
+      scale: 1.1;
+    }
+  }
+
+  &__category {
+    position: absolute;
+    @include adaptiv-value('top', 12, 8);
+    @include adaptiv-value('left', 12, 8);
+    pointer-events: none;
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include adaptiv-value('margin-top', 28, 20);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 16, 12);
+  }
+
+  &__tags {
+    display: flex;
+    @include adaptiv-value('gap', 8, 4);
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 16, 12);
+
+    &-info {
+      display: flex;
+      align-items: center;
+      @include adaptiv-value('gap', 20, 16);
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    @include adaptiv-value('gap', 12, 8);
+    color: $light-grey-1;
+
+    &-divider {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $light-grey-1;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    @include adaptiv-value('gap', 4, 2);
+
+    &-star {
+      @include adaptiv-value('width', 14, 12);
+
+      & path {
+        fill: $gold;
+      }
+    }
+
+    &[data-rated="false"] &-star {
+      & path {
+        fill: $grey;
+      }
+    }
+
+    &[data-rated="false"] &-value {
+      color: $grey;
+    }
+  }
+
+  &__title {
+    width: fit-content;
+    @include transition();
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__desc {
+    color: $light-grey-1;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    @include adaptiv-value('gap', 8, 6);
+    @include adaptiv-value('padding-top', 28, 20);
+
+    &-subtitle {
+      color: $light-grey-1;
+    }
+
+    &-name {
+      text-wrap: nowrap;
+    }
+  }
+}

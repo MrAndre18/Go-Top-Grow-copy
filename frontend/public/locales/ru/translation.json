@@ -1,0 +1,36 @@
+{
+  "tags": {
+    "search": "Поиск среди ключевых фраз",
+    "selected": "Выбранные ключевые фразы",
+    "clear": "Сбросить выбор"
+  },
+  "search_category": "Искать в «{{category}}»",
+  "categories_menu": {
+    "title": "Категории",
+    "clear": "Сбросить выбор"
+  },
+  "navigation_menu": {
+    "title": "Навигация"
+  },
+  "posts_list": {
+    "result_count": "Найдено записей:",
+    "no_result": "Ничего не найдено"
+  },
+  "footer": {
+    "map": "Карта сайта",
+    "useful": "Полезные ссылки"
+  },
+  "photo_card": {
+    "more_btn": "Подробнее"
+  },
+  "pagination_more": {
+    "show": "Показать ещё",
+    "hide": "Скрыть"
+  },
+  "accordion": {
+    "tel": "Телефон",
+    "site": "Сайт",
+    "email": "E-mail",
+    "minister": "Министр"
+  }
+}

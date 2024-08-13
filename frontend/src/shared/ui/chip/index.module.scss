@@ -1,0 +1,18 @@
+@import '/src/assets/styles/utils/utils';
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include adaptiv-value('padding-left', 12, 8);
+  @include adaptiv-value('padding-right', 12, 8);
+  @include adaptiv-value('padding-top', 8, 6);
+  @include adaptiv-value('padding-bottom', 8, 6);
+  @include adaptiv-value('border-radius', 24, 16);
+  background: rgba(194, 206, 215, 0.7);
+  backdrop-filter: blur(10px);
+
+  &__text {
+    color: $black;
+  }
+}

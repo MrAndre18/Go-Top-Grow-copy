@@ -1,0 +1,64 @@
+@import '../../../../assets/styles/utils/utils';
+
+.button-back {
+  $btn-back-width-pc: 55;
+  $btn-back-width-mob: 30;
+
+  position: relative;
+  @include adaptiv-value('height', $btn-back-width-pc, $btn-back-width-mob);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  @include adaptiv-value('padding-right', 20, 10);
+  @include adaptiv-value('padding-left', $btn-back-width-pc + 20, $btn-back-width-mob + 10);
+
+  &:hover &__circle {
+    width: 100%;
+  }
+
+  &:hover &__text {
+    color: $dark-grey;
+    transform: translateX(-10px);
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    @include adaptiv-value('width', $btn-back-width-pc, $btn-back-width-mob);
+    @include adaptiv-value('height', $btn-back-width-pc, $btn-back-width-mob);
+    @include adaptiv-value('border-radius', $btn-back-width-pc, $btn-back-width-mob);
+    background: $gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition();
+
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      @include adaptiv-value('left', 18, 8);
+      top: 50%;
+      transform: rotate(180deg) translateY(45%);
+
+      & svg {
+        @include adaptiv-value('width', 16, 12);
+        @include adaptiv-value('height', 16, 12);
+      }
+
+      & path {
+        fill: $dark-grey;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    @include transition();
+  }
+}

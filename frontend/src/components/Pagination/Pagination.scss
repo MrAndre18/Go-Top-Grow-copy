@@ -1,0 +1,44 @@
+@import '../../assets/styles/utils/utils';
+
+.pagination {
+  & .MuiPaginationItem {
+    &-root {
+      color: $white;
+      font-family: $font-inter;
+
+      &.MuiButtonBase-root {
+        @include adaptiv-font(16, 16);
+        border-radius: 4px;
+        @include adaptiv-value('margin-left', 3, 2);
+        @include adaptiv-value('margin-right', 3, 2);
+        @include adaptiv-value('padding-left', 6, 3);
+        @include adaptiv-value('padding-right', 6, 3);
+        @include adaptiv-value('min-width', 32, 26);
+        @include adaptiv-value('height', 32, 26);
+        @include transition();
+
+        &:hover {
+          background-color: rgba(115, 126, 132, 0.7);
+        }
+      }
+
+      &.Mui-selected {
+        background-color: rgba(255, 217, 0, 0.9);
+        color: $black;
+
+        &:hover {
+          background-color: rgba(255, 217, 0, 0.9);
+        }
+      }
+
+      &.MuiPaginationItem-previousNext {
+        border-radius: 50%;
+        margin: 0 3px;
+
+        @media (max-width: 768px) {
+          border: 1px solid rgba(115, 126, 132, 0.7);
+        }
+      }
+    }
+  }
+}

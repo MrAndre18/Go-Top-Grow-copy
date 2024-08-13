@@ -1,0 +1,135 @@
+@import '/src/assets/styles/utils/utils';
+
+.post {
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    @include adaptiv-value('padding-top', 32, 24);
+    @include adaptiv-value('padding-bottom', 32, 24);
+  }
+
+  &__content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 32, 24);
+
+    .p {
+      * {
+        display: inline;
+      }
+    }
+
+    .mark {
+      background-color: $gold;
+      color: $black;
+    }
+
+    .link {
+      @include transition();
+    }
+
+    .figure {
+      @include adaptiv-value('border-radius', 20, 16);
+      overflow: hidden;
+    }
+
+    .h2 {
+      @include adaptiv-value('padding-top', 20, 16);
+    }
+
+    .h3 {
+      @include adaptiv-value('padding-top', 16, 12);
+    }
+
+    .h4 {
+      @include adaptiv-value('padding-top', 12, 8);
+    }
+
+    .link {
+      text-decoration: underline;
+    }
+
+    .text-align {
+      &-left {
+        text-align: left;
+      }
+
+      &-center {
+        text-align: center;
+      }
+
+      &-right {
+        text-align: right;
+      }
+    }
+
+    .flex {
+      display: flex;
+      @include adaptiv-value('gap', 24, 16);
+
+      .vertical-align,
+      &.vertical-align {
+        &-top {
+          align-items: flex-start;
+          align-self: flex-start;
+        }
+
+        &-center {
+          align-items: center;
+          align-self: center;
+        }
+
+        &-bottom {
+          align-items: flex-end;
+          align-self: flex-end;
+        }
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiv-value('gap', 24, 16);
+
+      .vertical-align,
+      &.vertical-align {
+        &-top {
+          align-items: start;
+        }
+
+        &-center {
+          align-items: center;
+        }
+
+        &-bottom {
+          align-items: end;
+        }
+      }
+    }
+
+    .ol,
+    .ul {
+      display: flex;
+      flex-direction: column;
+      @include adaptiv-value('gap', 8, 4);
+      @include adaptiv-value('padding-left', 32, 24);
+    }
+
+    .ol {
+      list-style: decimal;
+    }
+
+    .ul {
+      list-style: disc;
+    }
+
+    .li {
+      display: list-item;
+    }
+  }
+}

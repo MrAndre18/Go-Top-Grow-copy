@@ -1,0 +1,37 @@
+@import '../../../../src/assets/styles/utils/utils';
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $grey;
+  color: $light-grey-2;
+  background: transparent;
+  border-radius: 5px;
+  @include adaptiv-value('padding-top', 4, 2);
+  @include adaptiv-value('padding-bottom', 4, 2);
+  @include adaptiv-value('padding-left', 15, 10);
+  @include adaptiv-value('padding-right', 15, 10);
+  @include transition();
+
+  &:hover {
+    border-color: $white;
+  }
+
+  &-text {
+    font-weight: 300;
+    @include adaptiv-font(14, 12);
+    letter-spacing: 0.1em;
+    word-wrap: unset;
+  }
+
+  &.active {
+    border-color: $white;
+    background: $white;
+    color: $black;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

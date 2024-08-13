@@ -1,0 +1,173 @@
+@import './utils/utils';
+
+.app {
+  position: relative;
+  background-color: $dark-green;
+  color: $white;
+
+  main {
+    background-color: $black;
+    @include adaptiv-value('border-bottom-left-radius', 80, 40);
+    @include adaptiv-value('border-bottom-right-radius', 80, 40);
+  }
+
+  .detail-page {
+    position: relative;
+    border-top: 1px solid $red;
+    @include adaptiv-value('padding-top', 80, 60);
+  }
+}
+
+.page {
+  @include adaptiv-value('padding-top', $block-margin-pc, $block-margin-mob);
+
+  &__title {
+    font-family: $font-oswald;
+    line-height: 130%;
+    font-weight: 500;
+    @include adaptiv-font(48, 36);
+    text-align: center;
+    @include adaptiv-value('margin-bottom', 80, 40);
+  }
+}
+
+.content {
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include adaptiv-value('padding-left', $page-padding-pc, $page-padding-mob);
+  @include adaptiv-value('padding-right', $page-padding-pc, $page-padding-mob);
+}
+
+.section {
+  @include adaptiv-value('padding-bottom', $block-margin-pc, $block-margin-mob);
+}
+
+.f-h1 {
+  font-family: $font-oswald;
+  line-height: 130%;
+  font-weight: 600;
+  @include adaptiv-font(72, 40);
+}
+
+.f-h2 {
+  font-family: $font-oswald;
+  line-height: 130%;
+  font-weight: 500;
+  @include adaptiv-font(48, 28);
+}
+
+.f-h3 {
+  font-family: $font-oswald;
+  line-height: 130%;
+  font-weight: 500;
+  @include adaptiv-font(28, 22);
+}
+
+.f-h4 {
+  font-family: $font-oswald;
+  line-height: 130%;
+  font-weight: 500;
+  @include adaptiv-font(22, 18);
+}
+
+.f-body-1 {
+  font-family: $font-inter;
+  line-height: 150%;
+  font-weight: 400;
+  @include adaptiv-font(18, 16);
+}
+
+.f-body-1-bold {
+  font-family: $font-inter;
+  line-height: 150%;
+  font-weight: 700;
+  @include adaptiv-font(18, 16);
+}
+
+.f-body-2 {
+  font-family: $font-inter;
+  line-height: 130%;
+  font-weight: 400;
+  @include adaptiv-font(16, 14);
+}
+
+.f-body-2-bold {
+  font-family: $font-inter;
+  line-height: 130%;
+  font-weight: 700;
+  @include adaptiv-font(16, 14);
+}
+
+.f-button-1 {
+  font-family: $font-inter;
+  line-height: 100%;
+  font-weight: 400;
+  @include adaptiv-font(20, 18);
+}
+
+.f-button-2 {
+  font-family: $font-inter;
+  line-height: 100%;
+  font-weight: 400;
+  @include adaptiv-font(16, 14);
+}
+
+.f-subtitle-1 {
+  font-family: $font-inter;
+  line-height: 100%;
+  font-weight: 200;
+  @include adaptiv-font(12, 11);
+}
+
+.noresult-message {
+  color: $grey;
+  @include adaptiv-font(18, 15);
+}
+
+.os-scrollbar {
+  &-handle {
+    --os-handle-bg: rgba(115, 126, 132, 0.6);
+    --os-handle-bg-hover: rgba(174, 186, 195, 0.6);
+    --os-handle-bg-active: rgba(174, 186, 195, 0.8);
+  }
+}
+
+.swiper-notification {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.parallax__inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  transition: transform 0.3s linear;
+}
+
+.menu-fade {
+  &-enter {
+    opacity: 0;
+
+    &-active {
+      opacity: 1;
+      @include transition();
+    }
+  }
+
+  &-exit {
+    opacity: 1;
+
+    &-active {
+      opacity: 0;
+      @include transition();
+    }
+  }
+}

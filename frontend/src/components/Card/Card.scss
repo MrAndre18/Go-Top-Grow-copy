@@ -1,0 +1,31 @@
+@import '../../assets/styles/utils/utils';
+
+.card {
+  position: relative;
+  background: $dark-grey;
+  @include adaptiv-value('border-radius', 32, 24);
+  height: 300px;
+  @include adaptiv-value('padding', 32, 24);
+  @include adaptiv-value('padding-top', 100, 60);
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
+
+  &__image {
+    position: absolute;
+    top: -30px;
+    @include adaptiv-value('top', -30, -24);
+    @include adaptiv-value('left', 32, 24);
+    @include adaptiv-value('height', 100, 80);
+    aspect-ratio: 1/1;
+
+    &-img {
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    @include adaptiv-value('margin-bottom', 20, 16);
+  }
+}

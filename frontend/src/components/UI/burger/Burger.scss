@@ -1,0 +1,104 @@
+@import '../../../../src/assets/styles/utils/utils';
+
+.burger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  &-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: $white;
+    border-radius: 50%;
+    @include transition();
+  }
+
+  &--active &-circle {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--active:hover &-circle {
+    background: $dark-grey;
+  }
+
+  &-item {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background: $white;
+    border-radius: 3px;
+    @include transition();
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 100%;
+      top: -10px;
+      right: 0;
+      background: $white;
+      border-radius: 3px;
+      @include transition();
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -10px;
+      right: 0;
+      background: $white;
+      border-radius: 3px;
+      @include transition();
+    }
+  }
+
+  &:not(.burger--active):hover &-item {
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &--active &-item {
+    width: 0;
+    height: 2px;
+    background: $black;
+
+    &::before {
+      width: 20px;
+      height: 2px;
+      background: $black;
+      transform: translate(50%, 10px) rotate(45deg);
+    }
+
+    &::after {
+      width: 20px;
+      height: 2px;
+      background: $black;
+      transform: translate(50%, -10px) rotate(-45deg);
+    }
+  }
+
+  &--active:hover &-item {
+    background: $white;
+
+    &::before {
+      background: $white;
+    }
+
+    &::after {
+      background: $white;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import '../../../../assets/styles/utils/utils';
+
+.btn {
+  position: relative;
+  width: 100%;
+  @include adaptiv-value('border-radius', 24, 20);
+  background: $green;
+  color: $white;
+  overflow: hidden;
+  @include transition();
+
+  &:hover {
+    background: $white;
+    color: $dark-green;
+  }
+
+  &--lg {
+    @include adaptiv-value('padding-top', 16, 12);
+    @include adaptiv-value('padding-bottom', 16, 12);
+    @include adaptiv-value('padding-right', 32, 24);
+    @include adaptiv-value('padding-left', 32, 24);
+  }
+
+  &--sm {
+    @include adaptiv-value('padding-top', 12, 8);
+    @include adaptiv-value('padding-bottom', 12, 8);
+    @include adaptiv-value('padding-right', 24, 16);
+    @include adaptiv-value('padding-left', 24, 16);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiv-value('gap', 20, 12);
+  }
+
+  &__text {
+    position: relative;
+    color: inherit;
+  }
+
+  &__spinner {
+    @include adaptiv-value('width', 24, 16);
+    @include adaptiv-value('height', 24, 16);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+
+    &::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      inset: 0px;
+      border-radius: 50%;
+      border: 2px solid $black;
+      animation: prixClipFix 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    @keyframes prixClipFix {
+      0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+      }
+
+      25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+      }
+
+      50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+      }
+
+      75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+      }
+
+      100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+      }
+    }
+  }
+
+  & .fade {
+    &-enter-active {
+      animation: fade-in 300ms forwards;
+    }
+
+    &-exit-active {
+      animation: fade-out 300ms forwards;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+    }
+  }
+}

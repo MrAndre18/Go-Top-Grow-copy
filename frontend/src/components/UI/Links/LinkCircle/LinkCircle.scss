@@ -1,0 +1,64 @@
+@import '../../../../../src/assets/styles/utils/utils';
+
+.link--circle {
+  position: relative;
+  @include adaptiv-value('width', 52, 40);
+  aspect-ratio: 1/1;
+  background: $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition($duration: 0.4s);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid $green;
+    opacity: 0;
+    @include transition($duration: 0.4s);
+  }
+
+  &:hover {
+    background: $green;
+
+    &::after {
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      left: -4px;
+      top: -4px;
+      opacity: 1;
+    }
+  }
+
+  &:hover &__img {
+    & path {
+      fill: $white;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiv-value('width', 24, 16);
+    @include adaptiv-value('height', 24, 16);
+
+    & .svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    & path {
+      fill: $green;
+      @include transition($duration: 0.4s);
+    }
+  }
+}

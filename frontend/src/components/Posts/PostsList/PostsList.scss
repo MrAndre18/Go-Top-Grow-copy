@@ -1,0 +1,33 @@
+@import '../../../assets/styles/utils/utils';
+
+.posts {
+  position: relative;
+
+  &-list {
+    @include adaptiv-value('margin-top', 80, 40);
+  }
+
+  &-item {
+    &:not(:last-child) {
+      @include adaptiv-value('margin-bottom', 30, 15);
+    }
+  }
+
+  &-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    font-weight: 300;
+    @include adaptiv-font(14, 12);
+
+    &__value {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include adaptiv-value('margin-left', 6, 4);
+      @include adaptiv-value('padding-right', 6, 4);
+      font-size: inherit;
+    }
+  }
+}

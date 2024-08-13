@@ -1,0 +1,27 @@
+@import '../../assets/styles/utils/utils';
+
+.selected-tags {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptiv-value('margin-bottom', 15, 10);
+  }
+
+  &__title {
+    @include adaptiv-font(16, 14);
+    letter-spacing: 0.05em;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  &__item {
+    @include adaptiv-value('margin-bottom', 10, 6);
+    @include adaptiv-value('margin-right', 10, 6);
+    height: fit-content;
+  }
+}

@@ -1,0 +1,89 @@
+@import '../../assets/styles/utils/utils';
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  height: 100vh;
+  width: 100%;
+  background: rgba(64, 64, 64, 0.7);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  @include transition();
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      position: relative;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      background: $white;
+      transform: rotate(45deg);
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__wrapper {
+    min-height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    min-height: 100vh;
+    opacity: 0;
+    background: $dark-grey;
+    @include adaptiv-value('padding-right', 20, 10);
+    @include adaptiv-value('padding-left', 20, 10);
+    @include adaptiv-value('padding-top', 40, 40);
+    @include adaptiv-value('padding-bottom', 32, 20);
+    @include transition();
+  }
+
+  &--right &__content {
+    margin-left: auto;
+    transform: translateX(100%);
+  }
+
+  &--left &__content {
+    transform: translateX(-100%);
+  }
+
+  &--open &__content {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../assets/styles/utils/utils';
+
+.title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // @include adaptiv-value('padding-right', $title-left-padding-pc + $page-padding-pc, $page-padding-mob);
+  // @include adaptiv-value('padding-left', $title-left-padding-pc + $page-padding-pc, $page-padding-mob);
+
+  &-text {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    text-align: center;
+    @include adaptiv-value('margin-bottom', $block-margin-pc, $block-margin-mob);
+    @include adaptiv-value('margin-top', $block-margin-pc, $block-margin-mob);
+    font-weight: 700;
+    @include adaptiv-font(38, 20);
+    letter-spacing: 0.15em;
+    text-transform: capitalize;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%);
+      width: 110%;
+      height: 50%;
+      background: $dark-grey;
+      border-radius: 4px;
+    }
+  }
+
+  &-subtitle {
+    @include adaptiv-value('max-width', 600, 290);
+    @include adaptiv-font(20, 14);
+    @include adaptiv-value('margin-bottom', 100, 60);
+  }
+}

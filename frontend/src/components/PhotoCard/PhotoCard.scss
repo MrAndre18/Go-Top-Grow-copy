@@ -1,0 +1,89 @@
+@import '../../assets/styles/utils/utils';
+
+.photo-cards__item {
+  position: relative;
+  @include adaptiv-value('height', 420, 300);
+  @include adaptiv-value('border-radius', 20, 12);
+  overflow: hidden;
+  background: $dark-grey;
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(64, 64, 64, 0.3), rgba(64, 64, 64, 0.3));
+    background-blend-mode: color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-img {
+      object-fit: cover;
+      object-position: left;
+
+      &.MuiSvgIcon-root {
+        width: 50%;
+        height: 50%;
+      }
+    }
+  }
+
+  &:hover &-content {
+    transform: translateY(0);
+    bottom: 0;
+  }
+
+  &-content {
+    position: absolute;
+    left: 0;
+    @include adaptiv-value('bottom', 110, 70);
+    height: 85%;
+    width: 100%;
+    transform: translateY(100%);
+    @include adaptiv-value('padding-top', 40, 20);
+    @include adaptiv-value('padding-bottom', 50, 20);
+    @include adaptiv-value('padding-right', 50, 15);
+    @include adaptiv-value('padding-left', 50, 15);
+    background: rgba(64, 64, 64, 0.8);
+    @include adaptiv-value('border-top-left-radius', 20, 12);
+    @include adaptiv-value('border-top-right-radius', 20, 12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include transition($duration: 800ms);
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin: auto 0 0;
+  }
+
+  &-title {
+    position: relative;
+    font-weight: 700;
+    @include adaptiv-font(20, 16);
+    @include adaptiv-value('margin-bottom', 40, 30);
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      @include adaptiv-value('bottom', -10, -6);
+      left: 50%;
+      transform: translateX(-50%);
+      @include adaptiv-value('width', 80, 60);
+      height: 1px;
+      background: $gold;
+    }
+  }
+
+  &-description {
+    font-weight: 300;
+    text-align: center;
+    @include adaptiv-font(16, 14);
+    line-height: 130%;
+  }
+}

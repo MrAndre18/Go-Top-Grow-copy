@@ -1,0 +1,47 @@
+@import '../../../assets/styles/utils/utils';
+
+.field {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &__input {
+    @include adaptiv-value('padding-left', 28, 12);
+    @include adaptiv-value('padding-right', 28, 12);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $white;
+    border: 1px solid $light-grey-1;
+    @include adaptiv-value('border-radius', 24, 16);
+    @include transition($duration: 0.3s);
+  }
+
+  &__label {
+    position: absolute;
+    @include adaptiv-value('left', 24 + 1, 10 + 1);
+    @include adaptiv-value('padding-left', 4, 2);
+    @include adaptiv-value('padding-right', 4, 14);
+    bottom: 50%;
+    transform: translateY(50%);
+    color: $light-grey-2;
+    background: $dark-green;
+    @include transition($duration: 0.3s);
+  }
+
+  &__input:focus {
+    border-color: $white;
+  }
+
+  &__input:not(:placeholder-shown):focus+.field__label,
+  &__input:focus+.field__label {
+    bottom: 100%;
+    color: white;
+  }
+
+  &__input:not(:placeholder-shown)+.field__label {
+    bottom: 100%;
+    color: $light-grey-1;
+  }
+}

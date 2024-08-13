@@ -1,0 +1,17 @@
+@import '../../assets/styles/utils/utils';
+
+.benefits {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiv-value('gap', 32, 24);
+
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

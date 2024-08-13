@@ -1,0 +1,29 @@
+@import '../../assets/styles/utils/utils';
+
+.process {
+  &__subtitle {
+    width: 50%;
+    padding-right: 20px;
+    @include adaptiv-value('margin-bottom', 52, 40);
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  &__steps {
+    display: grid;
+    grid-template-areas: ". content .";
+    grid-template-columns: 2fr 8fr 2fr;
+
+    @media (max-width: 768px) {
+      grid-template-areas: "content";
+      grid-template-columns: 1fr;
+    }
+
+    &-content {
+      grid-area: content;
+    }
+  }
+}

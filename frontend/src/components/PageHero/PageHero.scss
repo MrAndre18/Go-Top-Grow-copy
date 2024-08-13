@@ -1,0 +1,43 @@
+@import '../../assets/styles/utils/utils';
+
+.hero {
+  position: relative;
+  @include adaptiv-value('border-radius', 40, 24);
+  @include adaptiv-value('padding-top', 60, 40);
+  @include adaptiv-value('padding-bottom', 60, 40);
+  @include adaptiv-value('padding-left', 105, 20);
+  @include adaptiv-value('padding-right', 105, 20);
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 52, 40);
+  }
+
+  &__title {
+    max-width: 715px;
+  }
+
+  &__desc {
+    max-width: 610px;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+
+    @media (max-width: 600px) {
+      height: 50%;
+    }
+
+    & img {
+      object-fit: contain;
+    }
+  }
+}

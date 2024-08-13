@@ -1,0 +1,14 @@
+@import '/src/assets/styles/utils/utils';
+
+.blog {
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    @include adaptiv-value('padding-top', 32, 24);
+    @include adaptiv-value('padding-bottom', 32, 24);
+  }
+}

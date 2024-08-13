@@ -1,0 +1,59 @@
+@import '../../../../assets/styles/utils/utils';
+
+.download {
+  position: relative;
+  width: 100%;
+  @include adaptiv-value('padding-top', 20, 10);
+  @include adaptiv-value('padding-bottom', 20, 10);
+  @include adaptiv-value('padding-right', 45, 20);
+  @include adaptiv-value('padding-left', 45, 20);
+  background: $dark-grey;
+  @include adaptiv-value('border-radius', 20, 12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    width: 0;
+    background: $white;
+    @include transition();
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &:hover .download-text {
+    color: $dark-grey;
+  }
+
+  &:hover .download-img path {
+    fill: $dark-grey;
+  }
+
+  &-text {
+    position: relative;
+    z-index: 1;
+    @include adaptiv-font(18, 14);
+    @include transition();
+  }
+
+  &-img {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    @include adaptiv-value('width', 30, 25);
+
+    & path {
+      fill: $white;
+      @include transition();
+    }
+  }
+}

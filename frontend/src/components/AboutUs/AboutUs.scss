@@ -1,0 +1,83 @@
+@import '../../assets/styles/utils/utils';
+
+.about {
+  position: relative;
+  z-index: 1;
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr minmax(400px, 5fr) minmax(300px, 505px) 1fr;
+    grid-template-areas: ". image content .";
+
+    @media (max-width: 1200px) {
+      grid-template-columns: minmax(400px, 6fr) minmax(300px, 6fr);
+      grid-template-areas: "image content";
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+      align-items: center;
+      grid-template-areas:
+        "image"
+        "content";
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    @include adaptiv-value('margin-right', 40, 20);
+    border-radius: 40px;
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    &-img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+    @include adaptiv-value('margin-top', 20, 16);
+    @include adaptiv-value('margin-bottom', 20, 16);
+
+    @media (max-width: 1024px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-value('gap', 12, 8);
+  }
+
+  &__button {
+    @include adaptiv-value('margin-top', 52, 40);
+
+    & .btn {
+      width: auto;
+      background: $gold;
+      color: $black;
+
+      @media (max-width: 426px) {
+        width: 100%;
+      }
+
+      &:hover {
+        background: $white;
+        color: $dark-green;
+      }
+    }
+  }
+
+  &__modal-status {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

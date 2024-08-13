@@ -1,0 +1,53 @@
+@import '../../../assets/styles/utils/utils';
+
+.section__title {
+  position: relative;
+  z-index: 1;
+  @include adaptiv-value('margin-bottom', 80, 40);
+  display: grid;
+  grid-template-areas: "text . subtitle";
+  grid-template-columns: 5fr 1fr 6fr;
+
+  @media (max-width: 1200px) {
+    grid-template-areas: "text subtitle";
+    grid-template-columns: 6fr 6fr;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-areas:
+    "text"
+    "subtitle";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  &-text {
+    grid-area: text;
+
+    & span {
+      display: inline;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    &--gold {
+      color: $gold;
+    }
+
+    &--green {
+      color: $green;
+    }
+  }
+
+  &-subtitle {
+    grid-area: subtitle;
+    @include adaptiv-value('margin-top', 20, 16);
+    margin-left: 10px;
+
+    @media (max-width: 1024px) {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@import '../../../assets/styles/utils/utils';
+
+.react-select {
+  &__control {
+    max-height: fit-content;
+  }
+
+  &__control:hover {
+    cursor: pointer;
+  }
+
+  &__value-container {
+    margin-right: 4px;
+  }
+
+  &__single-value {
+    text-transform: uppercase;
+    @include transition();
+  }
+
+  &__dropdown-indicator path {
+    @include transition();
+  }
+
+  &__control:hover &__single-value,
+  &__control--menu-is-open &__single-value {
+    color: $gold;
+  }
+
+  &__control:hover &__dropdown-indicator path {
+    fill: $gold;
+  }
+
+  &__control--menu-is-open &__dropdown-indicator {
+    transform: rotateX(180deg);
+
+    & path {
+      fill: $gold;
+    }
+  }
+
+  &__menu {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: fit-content;
+    max-height: 400px;
+    max-width: 500px;
+    padding: 15px 12px;
+    background: rgba(64, 64, 64, 0.7);
+    box-shadow: -2px 2px 10px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    @include transition();
+
+    @media (max-width: 768px) {
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      z-index: 2000;
+      transform: translate(-50%, -50%);
+      background: rgba(64, 64, 64, 0.9);
+      box-shadow: 0px 0px 30px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__option {
+    text-align: center;
+    @include transition();
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &:hover {
+      color: $gold;
+      cursor: pointer;
+    }
+
+    &--is-selected {
+      color: $gold;
+    }
+  }
+}

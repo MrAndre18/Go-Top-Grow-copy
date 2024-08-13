@@ -1,0 +1,15 @@
+@import '../../assets/styles/utils/utils';
+
+.photo-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include adaptiv-value('grid-gap', 20, 10);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__pagination {
+    @include adaptiv-value('margin-top', 30, 20);
+  }
+}

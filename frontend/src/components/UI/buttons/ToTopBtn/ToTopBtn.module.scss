@@ -1,0 +1,43 @@
+@import '../../../../assets/styles/utils/utils';
+
+.to-top-btn {
+  position: fixed;
+  @include adaptiv-value('right', $page-padding-pc, $page-padding-mob);
+  bottom: 5vh;
+  z-index: 99;
+  @include adaptiv-value('height', 50, 40);
+  @include adaptiv-value('width', 50, 40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $dark-grey;
+  @include adaptiv-value('border-radius', 10, 8);
+  box-shadow: 0 0 8px 8px rgba(39, 39, 39, 0.3);
+  @include transition();
+
+  &:hover {
+    background: $gold;
+  }
+
+  &:hover &__img path {
+    fill: $black;
+  }
+
+  &__img {
+    transform: rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    @include transition();
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    & path {
+      @include transition();
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "form": {
+    "placeholder": "Search by laws",
+    "result_count": "Records found:",
+    "current_category": "All categories"
+  },
+  "detail": {
+    "back": "Back",
+    "download": "Download the document",
+    "search": "Document search"
+  }
+}

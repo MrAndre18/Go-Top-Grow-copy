@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/utils/utils';
+
+.business {
+  &-companies {
+    &__cards {
+      @include adaptiv-value('margin-bottom', 80, 60);
+    }
+
+    .card {
+      &-title {
+        font-weight: 700;
+        @include adaptiv-font(20, 16);
+      }
+    }
+  }
+
+  &-list {
+    list-style: decimal;
+    list-style-position: outside;
+    list-style-type: decimal;
+    @include adaptiv-value('padding-left', 30, 30);
+
+    &-wrapper:not(:last-child) {
+      @include adaptiv-value('margin-bottom', 35, 20);
+    }
+
+    &__title {
+      font-weight: 700;
+      @include adaptiv-font(16, 14);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      @include adaptiv-value('margin-bottom', 35, 20);
+    }
+
+    &__item {
+      display:list-item;
+      letter-spacing: 0.04em;
+      font-weight: 300;
+
+      &:not(:last-child) {
+        @include adaptiv-value('margin-bottom', 8, 6);
+      }
+    }
+  }
+}

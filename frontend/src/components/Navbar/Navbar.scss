@@ -1,0 +1,8 @@
+@import '../../assets/styles/utils/utils';
+
+.navigation {
+  &-list {
+    display: flex;
+    @include adaptiv-value('gap', 52, 40);
+  }
+}

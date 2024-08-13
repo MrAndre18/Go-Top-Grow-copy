@@ -1,0 +1,25 @@
+@import '../../../../../src/assets/styles/utils/utils';
+
+.navigation-link {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: none;
+    border-bottom: 1px solid $white;
+    @include transition();
+  }
+
+  &.active::before,
+  &:hover::before {
+    width: 100%;
+    left: 0;
+  }
+}

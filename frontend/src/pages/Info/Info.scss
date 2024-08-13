@@ -1,0 +1,98 @@
+@import '../../assets/styles/utils/utils';
+
+.info {
+  min-height: 100vh;
+  
+  &-page {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &-menu {
+    @include adaptiv-value('width', $nav-bar-width-pc, $nav-bar-width-mob);
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &--sticky {
+      position: sticky;
+      top: 30px;
+      z-index: 99;
+      height: fit-content;
+
+      @media (max-width: 768px) {
+        top: 5px;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    @include adaptiv-value('margin-left', 40, 0);
+    @include adaptiv-value('margin-right', 80, 0);
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      @include adaptiv-value('margin-bottom', 30, 15);
+      @include adaptiv-value('padding-left', 40, 0);
+
+      @media (max-width: 768px) {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+
+    &__category {
+      @include adaptiv-font(20, 16);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+
+      @media (max-width: 768px) {
+        padding-left: 0;
+        align-self: flex-start;
+        @include adaptiv-value('margin-bottom', 50, 40);
+      }
+    }
+
+    &__block {
+      &:not(:last-child) {
+        @include adaptiv-value('padding-bottom', 120, 80);
+      }
+
+      &-title {
+        @include adaptiv-value('margin-bottom', 80, 40);
+      }
+    }
+  }
+
+  &-text {
+    max-width: 1000px;
+    @include adaptiv-value('margin-bottom', 80, 40);
+
+    &__paragraph {
+      @include adaptiv-font(16, 14);
+      letter-spacing: 0.04em;
+
+      &:not(:last-child) {
+        @include adaptiv-value('margin-bottom', 12, 16);
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "tags": {
+    "search": "Search among keywords",
+    "selected": "Selected keywords",
+    "clear": "Reset the selection"
+  },
+  "search_category": "Search in «{{category}}»",
+  "categories_menu": {
+    "title": "Categories",
+    "clear": "Reset the selection"
+  },
+  "navigation_menu": {
+    "title": "Navigation"
+  },
+  "posts_list": {
+    "result_count": "Records found:",
+    "no_result": "Nothing was found"
+  },
+  "footer": {
+    "map": "Site map",
+    "useful": "Useful links"
+  },
+  "photo_card": {
+    "more_btn": "More"
+  },
+  "pagination_more": {
+    "show": "Show more",
+    "hide": "Hide"
+  },
+  "accordion": {
+    "tel": "Phone",
+    "site": "Site",
+    "email": "E-mail",
+    "minister": "Minister"
+  }
+}

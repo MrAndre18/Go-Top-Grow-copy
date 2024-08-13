@@ -1,0 +1,60 @@
+{
+  "marquee": {
+    "1": "Easily",
+    "2": "Quickly",
+    "3": "Effectively"
+  },
+  "title": {
+    "title": "<1>UAE </1>legislation",
+    "btn_info": "Info",
+    "btn_laws": "UAE legislation",
+    "typeIt": {
+      "1": "All about UAE legislation",
+      "2": "All about life in the UAE",
+      "3": "All about working in the UAE",
+      "4": "All about business in the UAE",
+      "5": "All about the state structure of the UAE",
+      "6": "All about the UAE's Free Economic Zones"
+    }
+  },
+  "represent": {
+    "title": "The most up-to-date information will help you understand the UAE legislation simply, quickly and effectively",
+    "description": "This portal contains only the most relevant laws of the United Arab Emirates with a detailed description and in a convenient format, which will allow you to easily navigate the legislation for all spheres of life. Detailed background information will help you find answers to any questions about the state structure of the country, the Emirates, free economic zones, starting a business and many others.",
+    "btn_info": "Info",
+    "btn_laws": "Laws"
+  },
+  "advantages": {
+    "title": "Advantages",
+    "items": {
+      "1": {
+        "title" : "Easily",
+        "description": "A simple language that is understandable not only to professional lawyers, but also to those who are faced with legislation for the first time"
+      },
+      "2": {
+        "title" : "Comfortable",
+        "description": "There is no need to search for information in many different sources: the answers to any questions are already on this site"
+      },
+      "3": {
+        "title" : "Actual",
+        "description": "Only current laws, background information and events"
+      },
+      "4": {
+        "title" : "Multifunctional",
+        "description": "A list of all UAE laws, background information on life, work and business, the latest news, currency exchange rates, useful tips and much more - on one portal"
+      },
+      "5": {
+        "title" : "Attention to detail",
+        "description": "The information is designed as fully as possible and taking into account all possible nuances and subtleties in order to answer any of your questions"
+      },
+      "6": {
+        "title" : "Expertise",
+        "description": "Laws and background information have been prepared and verified by experienced lawyers"
+      }
+    }
+  },
+  "business": {
+    "title": "Learn more about how to do business in the United Arab Emirates",
+    "description": "This portal contains only the most relevant laws of the United Arab Emirates with a detailed description and in a convenient format, which will allow you to easily navigate the legislation for all spheres of life. Detailed background information will help you find answers to any questions about the state structure of the country, the Emirates, free economic zones, starting a business and many others.",
+    "btn": "About business in the UAE"
+  }
+}

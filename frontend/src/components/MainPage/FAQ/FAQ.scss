@@ -1,0 +1,19 @@
+@import '../../../assets/styles/utils/utils';
+
+.faq {
+  &__list {
+    position: relative;
+    display: grid;
+    grid-template-areas: ". content .";
+    grid-template-columns: 1fr 10fr 1fr;
+
+    @media (max-width: 960px) {
+      grid-template-areas: "content";
+      grid-template-columns: 1fr;
+    }
+
+    &-wrapper {
+      grid-area: content;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import '../../assets/styles/utils/utils';
+
+.anchors {
+  &-menu {
+    &__trigger {
+      width: 100%;
+      @include adaptiv-value('padding-top', 12, 8);
+      @include adaptiv-value('padding-bottom', 12, 8);
+      background: $dark-grey;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 8px 8px rgba(39, 39, 39, 0.3);
+      @include transition();
+
+      &:hover {
+        background: $white;
+        color: $black;
+      }
+    }
+  }
+
+  &-category {
+    font-weight: 500;
+    @include adaptiv-font(16, 12);
+    letter-spacing: 0.1em;
+    @include adaptiv-value('margin-bottom', 30, 20);
+    @include adaptiv-value('padding-left', 16, 12);
+  }
+
+  &-links {
+    &--mobile {
+      background: $dark-grey;
+      color: $white;
+      @include adaptiv-value('padding-left', 20, 16);
+      @include adaptiv-value('padding-right', 20, 16);
+      @include adaptiv-value('padding-top', 30, 20);
+      @include adaptiv-value('padding-bottom', 40, 30);
+      height: 100%;
+
+      & .anchors-category {
+        @include adaptiv-font(20, 16);
+        @include adaptiv-value('margin-bottom', 30, 20);
+      }
+    }
+  }
+
+  &-link {
+    position: relative;
+    cursor: pointer;
+    @include adaptiv-font(14, 14);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    @include adaptiv-value('padding-top', 8, 6);
+    @include adaptiv-value('padding-bottom', 8, 6);
+    @include adaptiv-value('padding-left', 16, 12);
+    @include adaptiv-value('padding-right', 16, 12);
+    border-radius: 6px;
+    color: $light-grey-1;
+    @include transition();
+
+    &:hover {
+      color: $white;
+    }
+
+    &.active {
+      background: $white;
+      color: $black;
+    }
+  }
+}

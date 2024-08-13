@@ -1,0 +1,11 @@
+@import '../../../assets/styles/utils/utils';
+
+.posts {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 32px;
+  }
+
+  &__item {}
+}
